@@ -1,6 +1,9 @@
 // Assignment Code
 var generateBtn = document.querySelector("#generate");
 
+// Add event listener to generate button
+generateBtn.addEventListener("click", writePassword);
+
 // Create an array for the characters options to choose from for password
 var specialCharacters = ['@','%','+','\\','/',"'",'!','#','$','^','?',':',',',')','(','}','{',']','[','~','-','_','.'];
 var lowerCasedCharacters = ['a','b','c','d','e','f','g','h','i','j','k','l','m','n','o','p','q','r','s','t','u','v','w','x','y','z'];
@@ -16,5 +19,46 @@ function writePassword() {
 
 }
 
-// Add event listener to generate button
-generateBtn.addEventListener("click", writePassword);
+// Must create a function for the var generatePassword
+function generatePassword (){
+  // Prompt user to select how many characters want in generated password
+  var passLength = parseInt(prompt ('How many characters would you like your password to be?'));
+  // Alert the user to enter a number answer only
+  if(isNaN(passLength) === true){
+    alert('Password length must be a number only!');
+    return;
+  }
+
+  var hasNumbers = confirm('Select ok to include numbers');
+  var hasUpperCase = confirm('Select ok to include uppercase letters');
+  var hasLowerCase = confirm('Select ok to include lowercase letters');
+  var hasSpecialCharacters = confirm('Select ok to include special characters');  
+  // Must alert user to select at least one type of character when prompted
+  if(!hasLowerCase && !hasUpperCase && !hasNumbers && !hasSpecialCharacters){
+    alert('Must select at least one password character type!');
+    return;
+  }
+
+  // Create variable to hold new generated password
+    var password = '';
+    for( i=0; i < passLength; i++){
+
+      if(hasLowerCase && password.length < passLength) {
+        password += getRandom(lowerCasedCharacters);
+      }
+
+      if(hasUpperCase && password.length < passLength) {
+        password += getRandom(upperCasedCharacters);
+      }
+
+      if(hasNumbers && password.length < passLength) {
+        password += getRandom(numericCharacters);
+      }
+
+      if(hasSpecialCharacters && password.length < passLength) {
+        password += getRandom(specialCharacters);
+      }
+    }
+  
+    return password;
+}
