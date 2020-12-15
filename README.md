@@ -19,7 +19,9 @@ Once the program has verified that the password meets the minimum and maximum le
 
 Built with
 
-•VS Code
+* Visual Studio Code
+* JavaScript
+
 
 ## Installation
 
@@ -27,7 +29,7 @@ https://nsc9605.github.io/RandomPasswordGen_NSC/
 
 ## Demo Screenshot
 
-![RandomPasswordGen-NSC](/assets/images/RandomPasswordGen-NSC-demo.png)
+![RandomPasswordGen-NSC](assets/images/PasswordGenerator.gif)
 
 ## Credits
 
