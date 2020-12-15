@@ -29,7 +29,7 @@ https://nsc9605.github.io/RandomPasswordGen_NSC/
 
 ## Demo Screenshot
 
-![RandomPasswordGen-NSC](assets/images/PasswordGenerator.gif)
+![RandomPasswordGen-NSC](/assets/images/PasswordGenerator.gif)
 
 ## Credits
 
